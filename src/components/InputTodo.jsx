@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 
 const InputTodo = ({ addTodoItem }) => {
   const [title, setTitle] = useState('');
@@ -37,7 +37,7 @@ const InputTodo = ({ addTodoItem }) => {
   );
 };
 
-// InputTodo.propTypes = {
-//   addTodoItem: PropTypes.func,
-// };
 export default InputTodo;
+InputTodo.propTypes = {
+  addTodoItem: PropTypes.func.isRequired,
+};

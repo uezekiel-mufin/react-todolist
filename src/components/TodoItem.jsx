@@ -13,7 +13,7 @@ const TodoItem = ({ itemProp, handleChange, delTodo }) => {
     <li className={styles.item}>
       <div className={styles.content}>
         <input type="checkbox" checked={itemProp.completed} onChange={(() => handleChange(itemProp.id))} />
-        <button onClick={() => delTodo(itemProp.id)}>Delete</button>
+        <button onClick={() => delTodo(itemProp.id)} type="button">Delete</button>
         <span style={itemProp.completed ? completedStyle : null}>
           {itemProp.title}
         </span>
@@ -23,3 +23,8 @@ const TodoItem = ({ itemProp, handleChange, delTodo }) => {
 };
 
 export default TodoItem;
+TodoItem.propTypes = {
+  itemProp: PropTypes.shape.isRequired,
+  delTodo: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
+};
